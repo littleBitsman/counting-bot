@@ -25,4 +25,4 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm i
-    - run: node "funbot 101.js"
+    - run: node index.js
