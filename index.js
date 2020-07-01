@@ -1,6 +1,5 @@
 const Discord = require('discord.js')
 const bot = new Discord.Client()
-const token = 'NzEwOTQxMjI2NDA4NjA3ODE1.Xr7xow.W2RpeZbWkzYMIbDur4ppQ2XCZxw';
 const PREFIX = 'f!';
 const embed = new Discord.MessageEmbed()
 bot.on('ready', async () => {
@@ -72,4 +71,4 @@ bot.on('message', message => {
       break;
   }
 })
-bot.login(token);
+bot.login(process.env.token);
