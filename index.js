@@ -23,6 +23,10 @@ bot.on('message', message => {
     case 'testfunbot':
       message.reply('I am online! Created by @littleBitsman.')
       break;
+    case 'inviteme':
+      var embed = new Discord.MessageEmbed()
+        .setTitle('Invite Me')
+        .setDescription('Invite me to your server here: https://discord.com/oauth2/authorize?client_id=710941226408607815&scope=bot&permissions=18432')
     case 'youtube':
       var embed = new Discord.MessageEmbed()
         .setTitle('Youtube Channel:')
@@ -35,7 +39,7 @@ bot.on('message', message => {
       var embed = new Discord.MessageEmbed()
         .setTitle('Help:')
         .setColor(0xff0000)
-        .setDescription('Prefix: ' + PREFIX + '\n Commands: \n testfunbot: Check if I am online. \n youtube: Look at @Icecreamdude\'s Youtube channel. \n minecraftorfortnite: Make me randomly choose Minecraft or Fortnite! \n hi: I will say something, but don\'t want to say it here... \n no: I will say something, but don\'t want to say it here... \n likebots?: I will say something, but don\'t want to say it here... \n removefunbot: I will say something, but don\'t want to say it here... \n removesuperrobot220: I will say something, but don\'t want to say it here... \n redbot: I will say something, but don\'t want to say it here... \n ping: I will say something, but don\'t want to say it here...')
+        .setDescription('Prefix: ' + PREFIX + '\n Commands: \n testfunbot: Check if I am online. \n youtube: Look at @Icecreamdude\'s Youtube channel. \n minecraftorfortnite: Make me randomly choose Minecraft or Fortnite! \n hi: I will say something, but don\'t want to say it here... \n no: I will say something, but don\'t want to say it here... \n likebots?: I will say something, but don\'t want to say it here... \n removefunbot: I will say something, but don\'t want to say it here... \n removesuperrobot220: I will say something, but don\'t want to say it here... \n redbot: I will say something, but don\'t want to say it here... \n ping: I will say something, but don\'t want to say it here... \n inviteme: Invite me to your server!')
         .setAuthor('Made by @littleBitsman')
         message.channel.send(embed)
         break;
@@ -60,8 +64,6 @@ bot.on('message', message => {
     case 'removefunbot':
       message.channel.send('NO NO DON\'T REMOVE MEEEEEEEEE!')
       break;
-    case 'removesuperrobot220':
-      message.channel.send('What the heck does he do??!! Tell @Icecreamdude to remove him!!!')
       break;
     case 'redbot':
       message.channel.send('Wait? You know my dad?')
