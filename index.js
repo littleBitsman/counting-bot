@@ -28,6 +28,7 @@ bot.on('message', message => {
         .setTitle('Invite Me')
         .setDescription('Invite me to your server here: https://discord.com/oauth2/authorize?client_id=710941226408607815&scope=bot&permissions=18432')
       message.channel.send(embed)
+      break;
     case 'youtube':
       var embed = new Discord.MessageEmbed()
         .setTitle('Youtube Channel:')
