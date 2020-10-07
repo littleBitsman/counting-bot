@@ -26,5 +26,5 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm i
     - run: node .
-        env:
-          token: ${{ secrets.TOKEN }}
+      env:
+        token: ${{ secrets.TOKEN }}
