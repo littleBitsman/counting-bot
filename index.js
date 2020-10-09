@@ -2,7 +2,6 @@ const Discord = require('discord.js')
 const bot = new Discord.Client()
 const PREFIX = 'v!';
 const embed = new Discord.MessageEmbed()
-const Role = message.guild.roles.cache.get(process.env.verified_role_id);
 bot.on('ready', async () => {
   console.log('This bot is online! Created by @littleBitsman.');
   let statuses = [
@@ -25,7 +24,8 @@ function makeid(length) {
   return result;
 }
 
-bot.on("guildMemberAdd" ,(member) => {
+bot.on("guildMemberAdd" ,(member, message) => {
+  let Role = message.guild.roles.cache.get(process.env.verified_role_id);
   var randomphrase = makeid(20)
   var messagetosend = new Discord.MessageEmbed()
    .setTitle('Verification')
