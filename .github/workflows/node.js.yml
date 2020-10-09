@@ -29,5 +29,4 @@ jobs:
     - run: node .
       env:
         token: ${{ secrets.TOKEN }}
-        server_id: ${{ secrets.SERVER_ID }}
         verified_role_id: ${{ secrets.SERVER_VERIFIED_ROLE_ID }}
