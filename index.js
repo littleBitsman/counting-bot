@@ -24,8 +24,8 @@ function makeid(length) {
   return result;
 }
 
-bot.on("guildMemberAdd" ,(member, message) => {
-  let Role = message.guilds.roles.cache.get(process.env.verified_role_id);
+bot.on("guildMemberAdd" ,(member, message, guild) => {
+  let Role = message.guild.roles.cache.get(process.env.verified_role_id);
   var randomphrase = makeid(20)
   var messagetosend = new Discord.MessageEmbed()
    .setTitle('Verification')
