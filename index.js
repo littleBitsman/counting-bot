@@ -12,26 +12,7 @@ bot.on('ready', async () => {
    bot.user.setActivity(status, {type: ''})
  }, 3000)
 })
-function makeid(length) {
-  var result           = '';
-  var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-  var charactersLength = characters.length;
-  for ( var i = 0; i < length; i++ ) {
-     result += characters.charAt(Math.floor(Math.random() * charactersLength));
-  }
-  return result;
-}
 
-bot.on('guildMemberAdd', member => {
-  let Role = message.guild.roles.cache.get(process.env.verified_role_id);
-  var randomphrase = makeid(20)
-  var messagetosend = new Discord.MessageEmbed()
-   .setTitle('Verification')
-   .setDescription(`Please retype this string: ${randomphrase}`)
-  message.client.users.fetch(`${member}`).then(user => user.send(messagetosend))
-  if (user.message.content == randomphrase)
-    member.roles.add(Role)
-});
 
 bot.on('message', message => {
   let args = message.content.substring(PREFIX.length).split(' ')
@@ -39,7 +20,10 @@ bot.on('message', message => {
   switch (args[0]) {
     case 'start':
       message.channel.delete()
-      var counter = message.channel.lastMessage + 1
+      if (isFinite(message.channel.lastMessage) == true)
+        var counter = message.channel.lastMessage + 1
+      else
+        var counter = 1
       var count = 'y'
       while(count = 'y')
         message.channel.send(counter)
